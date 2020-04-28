@@ -43,6 +43,9 @@
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0"
   },
+   "engines": {
+    "node": "12.16.1"
+  },
   "description": "Restaurant Search (BMO test)",
   "main": "index.js",
   "author": "",
