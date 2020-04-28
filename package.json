@@ -21,7 +21,7 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node build/index.html",
     "build": "react-scripts build",
     "test": "jest",
     "eject": "react-scripts eject"
