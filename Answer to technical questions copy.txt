@@ -1,0 +1,104 @@
+<question> 
+How long did you spend on the coding assignment? What would you add to your solution if you had more time? 
+If you didn't spend much time on the coding test then use this as an opportunity to explain what you would add. 
+</question>
+
+<answer> 
+Honestly, I spent about 10 hrs on this assignemnt.  Despite that, I must admit it's not the most polished.  
+I realized I am experienced at writing react and redux, but it's been a long time since I've set up a project from 
+scratch, and I got stuck in quite a few areas trying to spin everything up correctly.  Despite that, 
+it was a great learning opportunity and I am grateful to have it, and it inspired me to go forward plugging the
+holes in my game.  
+   The main areas of the program that I would like to improve are as following.
+   (1) Add in the filter.  As of right now, I did not have time to implement the filter.  
+I foresee this piece of logic working using .filter, either on the native Javascript array type or leveraging underscore.  
+One way is to push all the restaurant names into one array, all the areas into another array, all the addresses into
+another array etc... and filter through each one.
+   (2) Some additional features: Add in pagination.  The API currently returns a subset of stores,
+and the user should be able to move from one page to the next.  Right now in my program,
+they only see the results on the first page (25 stores by default), which given more time I would like to expand.
+   (2) Add in caching for the redux store.  Right now upon every API search request, the redux store is re-populated
+by the API's return.  However, the user could have searched for the same city twice.  
+It would be nice to cache the returns, as well as have some sort of timer (maybe 1 day?) upon which the cache is cleared,
+so data doesn't get stale.
+   (3) Add more polish and shine to the CSS and template structure.  Things like a loading indicator while the request
+is in flight, adding a dedicated error or no results found page.  I find quite often it is the small things which makes
+the user experience better.
+</answer>
+
+
+<question>
+What was the most useful feature that was added to the latest version of your chosen language?
+Please include a snippet of code that shows how you've used it.
+</question>
+
+<answer>
+I read that optional chaining will be coming to Javascript soon.  That is, we no longer have to careful check deeply
+nested properties to ensure their parent exist.  For example, in the code I wrote (in the reducer),
+I had to write error checks as following to make sure to only assign properties if their parent exists: 
+
+      name: restaurantData.name ? restaurantData.name : null,
+
+since we cannot control what the API returns, wae cannot assume the "restaurantData" object always exists.
+However, in the future, this same block of code may be shorthanded to
+
+       name: restaurantData?.name,
+
+A small change, but a nice quality of life improvement.  I've had entire programs crash because of the dreaded
+"cannot find property on undefined" error.
+</answer>
+
+<question> How would you track down a performance issue in production? Have you ever had to do this? </question>
+
+<answer> I believe the first step to resolving production performance issues is to investigate what lighthouse has
+to suggest.  It is a great tool provided by Google and I believe there is no need to reinvent the wheel.
+However, in addition to that, one should also check the console network tab to see if there is anything loading slowly.
+Usually large unoptimized images, images being hosted on other domains, or large unminified files are the culprit.
+After that, another common source of performance hit are API calls.  It would be good to reduce these as much as possible,
+either by combining several calls together, caching the response whenever possible in redux store or localstorage,
+and/or prioritizing API calls that render data above the 600px fold first (for example, loading the first batch of
+search results first to render visually, and delay loading the rest until the user scrolls down).    
+For React specifically, leveraging PureComponents and shouldComponentUpdate() are great ways to prevent unnecessary
+re-rendering.  I once discovered a list of alerts on a client site re-rendered each alert whenever any one of them
+changed.  A quick check inside shouldComponentUpdate() in this case can prevent these issues.
+Lastly, I believe adding a loading wireframe or a loading spinner gives the user the reassurance of progress.
+Often the illusion of speed is just as importance as actual speed when performance optimizations are not possible.
+Users are more likely to stay on a page if they see a loading indicator, confirming the site has not frozen over.
+</answer>
+
+<question> How would you improve the API that you just used? </question>
+<answer> My main qualm was the API only returned a subset of restaurant data at a time.
+If user wanted to see all the data, I would have to make API calls for each subsequent page.
+In addition, if the user wanted to filter the restaurants by some keywords, without additional API calls,
+they are essentialy only filtering the data which has already been fetched.
+I believe it would be more efficient to load all the stores at once, and leave it to the Front end to implement the
+pagination logic on the entire set of data.
+As a counter argument to the above, if the data set of restaurants grew extremely large, front loading it all may be
+performance prohibitive.  In that case, adding an endpoint for filtering by keywords would make implenenting filtering
+logics much easier, and more performant.  
+</answer> 
+
+
+<question> Please describe yourself using JSON. </question>
+
+If I was a game/movie character, describe in a JSON
+
+{
+    character: "Michael Du",
+    class: "Programmer",
+    weapon: "Keyboard",
+    perks: ["Stock Investment+1", "Mountain hiking+1", "Books&Reading+2", "Breakdancing+1"],
+    handicaps: ["Alcohol tolerance-1", "Vision-2 (glasses)", "Speed & mobility-1 (Poor back)"],
+    other_interests: "space and astrophysics (Fermi paradox, where are the aliens?) and learning new skills (currently trying my hand at salsa dancing, or should I say feet).",
+    guilty_pleasure_video_games: true,
+    unbelievable: {
+	fact: "I tamed chipmunk once when I was in elementary, and it followed me home.",
+        subfact: "It's to date the only pet I've ever had."
+    },
+    future_goals: ["Be a better programmer", "Learn to invest", "Own a house"]
+    favourite_travel_destination: (!summer) ? "Venice" : "Any mountainous hiking trail",
+    travel_wish_list: "Macchu Picchu, to hike the Inca trail.",
+    favourite_movie: Interstellar || Mad Max, 
+    favourite_language: "Javascript.  Of course ;)  Because it's what I work with"   
+}
+
