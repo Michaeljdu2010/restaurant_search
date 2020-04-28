@@ -1,0 +1,28 @@
+@import '../Common/variables.scss';
+
+@media (min-width: $mobile-breakpoint) {
+	.restaurant {
+		float: none;
+		width: 80%;
+		margin-top: 25px;
+		overflow: hidden;
+
+		&__img {
+			float: left;
+			width: 30%;
+		}
+
+		&__info {
+			float: right;
+			width: 70%;
+			text-align: center;
+		}
+	}
+}
+
+@media (min-width: $tablet-breakpoint) {
+	.restaurant {
+		float: left;
+		width: 50%;	
+	}
+}

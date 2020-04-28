@@ -1,0 +1,14 @@
+.filter {
+	margin-top: 10px;
+	text-align: center;
+
+	&__label {
+		margin-right: 10px;
+	}
+
+	&__input {
+		height: 25px;
+		border: none;
+		padding: 0px 5px;
+	}
+}

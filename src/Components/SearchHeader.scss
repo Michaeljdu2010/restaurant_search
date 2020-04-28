@@ -1,0 +1,29 @@
+@import '../Common/variables.scss';
+
+.search-header {
+	text-align: center;
+	margin-top: 40px;
+	font-size: 18px;
+	color: $header-font-color;
+
+	&__logo {
+		background-color: $logo-color;
+		margin: 0 auto;
+		width: 140px;
+		height: 140px;
+		border-radius: 8px;
+		display: flex;
+		align-items: center;
+        justify-content: center;
+
+		&__caption {
+			font-size: 1.2em;
+		}
+	}
+
+	&__sub-caption {
+		margin-top: 15px;
+   		font-style: italic;
+    	font-size: 1.2em;
+	}
+}

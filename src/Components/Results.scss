@@ -1,0 +1,13 @@
+.results {
+	margin-top: 20px;
+
+	&__results-tally {
+		text-align: center;
+	}
+
+	&__results-list {
+		overflow: hidden;
+		margin: 25px auto;
+		width: 85%;
+	}
+}

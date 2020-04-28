@@ -1,0 +1,32 @@
+@import '../Common/variables.scss';
+
+@media (min-width: $mobile-breakpoint) {
+	body {
+		margin: 0;
+		fonnt-size: $base-font-size;
+	}
+
+	.app {
+		overflow: hidden;
+		background-image: url("../Resources/bg.jpeg");
+		background-size: cover;
+		background-attachment: fixed;
+
+		&__header {
+			overflow: hidden;
+			opacity: 0.85;
+			background-color: $background-color;
+			height: 300px;
+		}
+
+		&__body {
+			overflow: hidden;
+			min-height: 600px;
+			width: 90%;
+	    	margin: 25px auto;
+	    	background: #b3b3b3;
+	    	opacity: 0.9;
+	    	border-radius: 7px;
+		}
+	}
+}
