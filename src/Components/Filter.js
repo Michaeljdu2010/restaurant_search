@@ -1,6 +1,7 @@
 import React from 'react';
 import './Filter.scss';
 
+// The Logic for Filter has not been implemented yet, due to time restraints
 const Filter = ({ cityName, totalEntries }) => {
 	return (
 		<div className="filter">

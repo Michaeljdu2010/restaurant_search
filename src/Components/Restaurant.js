@@ -6,10 +6,10 @@ const Restaurant = ({ restaurant }) => {
 		<div className="restaurant">
 			<img className="restaurant__img" src={restaurant.img} alt={`${restaurant.name} logo`} /> 
 			<div className="restaurant__info">
-				<p> {restaurant.name} </p>
-				<p> {restaurant.address} </p>
-				<p> Price point: {restaurant.price} </p> 
-				<p> {restaurant.area} </p>
+				<p className="restaurant__info__name">{restaurant.name}</p>
+				<p className="restaurant__info__address">{restaurant.address}</p>
+				<p className="restaurant__info__price">Price point: {restaurant.price}</p> 
+				<p className="restaurant__info__area">{restaurant.area}</p>
 			</div>
 		</div>
 	);

@@ -8,12 +8,14 @@ const Results = ({ cityName, totalEntries, restaurants }) => {
 		<div className="results">
 			<div className="results__results-tally">
 				{(cityName && totalEntries) && 
-					<p>
+					<p className="results__results-tally__tally-caption">
 						<span>{totalEntries}</span> Results in {cityName}
 					</p>
 				}
 				{(cityName && !totalEntries) && 
-					<p> No results found for {cityName} </p>
+					<p className="results__results-tally__no-results-caption">
+						No results found for {cityName}
+					</p>
 				}
 			</div>
 			<div className="results__filter">
